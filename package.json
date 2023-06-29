@@ -7,18 +7,13 @@
     "dev": "tsx watch src/server.ts",
     "build": "tsup src",
     "test": "vitest",
-    "lint": "eslint src --ext .ts --fix",
-    "knex": "node --loader tsx ./node_modules/knex/bin/cli.js"
+    "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "fastify": "^4.12.0",
-    "knex": "^2.4.2",
-    "sqlite3": "^5.1.6",
-    "zod": "^3.21.4"
+    "fastify": "^4.12.0"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
