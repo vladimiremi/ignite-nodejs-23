@@ -3,7 +3,9 @@ import { env } from './env'
 import { transactions } from './routes/transactions'
 const app = fastify()
 
-app.register(transactions)
+app.register(transactions, {
+  prefix: 'transactions',
+})
 
 app
   .listen({
