@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src",
-    "test": "vitest",
     "lint": "eslint src --ext .ts --fix",
-    "knex": "node --loader tsx ./node_modules/knex/bin/cli.js"
+    "knex": "node --loader tsx ./node_modules/knex/bin/cli.js",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -27,7 +27,7 @@
     "eslint": "^8.43.0",
     "tsup": "^7.1.0",
     "tsx": "^3.12.7",
-    "typescript": "^4.9.5",
-    "vitest": "^0.32.2"
+    "vitest": "^0.32.2",
+    "typescript": "^4.9.5"
   }
 }
