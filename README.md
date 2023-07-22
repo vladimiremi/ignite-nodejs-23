@@ -3,6 +3,7 @@
 1. Clone o projeto
 2. No terminal execute `npm i` para instalar as dependências
 3. Para executar o projeto execute `npm run dev`
+3. Na pasta `/utils` tem todos os endpoints disponíveis
 
 
 ## Testes E2E
