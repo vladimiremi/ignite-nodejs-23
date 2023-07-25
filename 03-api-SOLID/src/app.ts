@@ -1,13 +1,24 @@
-import { PrismaClient } from '@prisma/client'
 import fastify from 'fastify'
+import { appRoutes } from './http/routes'
+import { ZodError } from 'zod'
+import { env } from './env'
 
 export const app = fastify()
 
-const prisma = new PrismaClient()
+app.setErrorHandler((error, _request, reply) => {
+  if (error instanceof ZodError) {
+    return reply
+      .status(400)
+      .send({ message: 'Validation Error.', issues: error.format() })
+  }
 
-prisma.user.create({
-  data: {
-    name: 'Vladimir',
-    email: 'vladimir@gmail.com',
-  },
+  if (env.NODE_ENV !== 'production') {
+    console.error(error)
+  } else {
+    // TODO: Here we should log to an external took like DataDog/NewRelic/Sentry
+  }
+
+  return reply.status(500).send({ message: 'Internal server error.' })
 })
+
+app.register(appRoutes)
