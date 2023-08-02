@@ -8,7 +8,8 @@
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "@rocketseat/eslint-config": "2.1.0",
     "@types/bcryptjs": "2.4.2",
     "@types/node": "20.4.4",
+    "@vitest/coverage-v8": "0.34.1",
     "eslint": "8.45.0",
     "prisma": "5.0.0",
     "tsup": "7.1.0",
